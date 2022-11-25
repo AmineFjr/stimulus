@@ -2,8 +2,12 @@ import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller
 {
-    contact() {
-        this.element.innerHTML = 'You have clicked me 0 times ';
+    static targets = ['count'];
+    count = 0 ;
+
+    increment(){
+        this.count++;
+        this.countTarget.innerHTML = this.count;
     }
 }
 
